@@ -55,13 +55,7 @@ const createIcon = (classes) => {
 };
 
 const addItemToStorage = (item) => {
-  let itemsFromStorage;
-
-  if (localStorage.getItem("items") === null) {
-    itemsFromStorage = [];
-  } else {
-    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
-  }
+  const itemsFromStorage = getItemsFromStorage();
 
   // Add new item to array
   itemsFromStorage.push(item);
@@ -70,6 +64,18 @@ const addItemToStorage = (item) => {
 
   // Convert to JSON string and set to local storage
   localStorage.setItem("items", JSON.stringify(itemsFromStorage));
+};
+
+const getItemsFromStorage = () => {
+  let itemsFromStorage;
+
+  if (localStorage.getItem("items") === null) {
+    itemsFromStorage = [];
+  } else {
+    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
+  }
+
+  return itemsFromStorage;
 };
 
 const removeItem = (e) => {
