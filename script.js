@@ -19,7 +19,10 @@ const addItem = (e) => {
 
   const button = createButton("remove-item btn-link text-red");
   li.appendChild(button);
-  console.log(li);
+
+  itemList.appendChild(li);
+
+  itemInput.value = "";
 };
 
 const createButton = (classes) => {
