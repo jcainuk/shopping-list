@@ -3,6 +3,8 @@ const itemInput = document.getElementById("item-input");
 const itemList = document.getElementById("item-list");
 const clearButton = document.getElementById("clear");
 const itemFilter = document.getElementById("filter");
+const formButton = itemForm.querySelector("button");
+let isEditMode = false;
 
 const displayItems = () => {
   const itemsFromStorage = getItemsFromStorage();
@@ -90,7 +92,20 @@ const getItemsFromStorage = () => {
 const onClickItem = (e) => {
   if (e.target.parentElement.classList.contains("remove-item")) {
     removeItem(e.target.parentElement.parentElement);
+  } else {
+    setItemToEdit(e.target);
   }
+};
+
+const setItemToEdit = (item) => {
+  isEditMode = true;
+  itemList
+    .querySelectorAll("li")
+    .forEach((item) => item.classList.remove("edit-mode"));
+  item.classList.add("edit-mode");
+  formButton.innerHTML = '<i class ="fa-solid fa-pen"></i> Update Item';
+  formButton.style.backgroundColor = "#228B22";
+  itemInput.value = item.textContent;
 };
 
 const removeItem = (item) => {
