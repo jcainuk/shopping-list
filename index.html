@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Shopping List Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Shopping List</h1>
+      </header>
+      <form id="item-form">
+        <div>
+          <input
+            type="text"
+            id="item-input"
+            name="item"
+            placeholder="Enter Item"
+          />
+        </div>
+        <div>
+          <button type="submit">Add Item</button>
+        </div>
+      </form>
+
+      <div>
+        <input type="text" id="filter" placeholder="Filter Items" />
+      </div>
+
+      <ul id="item-list">
+        <li>
+          Apples
+          <button>x</button>
+        </li>
+        <li>
+          Orange Juice
+          <button>x</button>
+        </li>
+        <li>
+          Oreos
+          <button>x</button>
+        </li>
+        <li>
+          Milk
+          <button>x</button>
+        </li>
+      </ul>
+
+      <button id="clear">Clear All</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
