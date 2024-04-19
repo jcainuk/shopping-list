@@ -40,6 +40,20 @@ const addItemToDOM = (item) => {
   itemList.appendChild(li);
 };
 
+const createButton = (classes) => {
+  const button = document.createElement("button");
+  button.className = classes;
+  const icon = createIcon("fa-solid fa-xmark");
+  button.appendChild(icon);
+  return button;
+};
+
+const createIcon = (classes) => {
+  const icon = document.createElement("i");
+  icon.className = classes;
+  return icon;
+};
+
 const addItemToStorage = (item) => {
   let itemsFromStorage;
 
@@ -56,20 +70,6 @@ const addItemToStorage = (item) => {
 
   // Convert to JSON string and set to local storage
   localStorage.setItem("items", JSON.stringify(itemsFromStorage));
-};
-
-const createButton = (classes) => {
-  const button = document.createElement("button");
-  button.className = classes;
-  const icon = createIcon("fa-solid fa-xmark");
-  button.appendChild(icon);
-  return button;
-};
-
-const createIcon = (classes) => {
-  const icon = document.createElement("i");
-  icon.className = classes;
-  return icon;
 };
 
 const removeItem = (e) => {
