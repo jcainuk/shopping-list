@@ -15,19 +15,26 @@ const onAddItemSubmit = (e) => {
     return;
   }
 
-  // Create list item
-  const li = document.createElement("li");
-  li.appendChild(document.createTextNode(newItem));
-
-  const button = createButton("remove-item btn-link text-red");
-  li.appendChild(button);
+  // Add to the DOM
+  addItemToDOM(newItem);
 
   // Add li to the DOM
   checkUI();
 
-  itemList.appendChild(li);
-
   itemInput.value = "";
+};
+
+const addItemToDOM = (item) => {
+  // Create list item
+  const li = document.createElement("li");
+  li.appendChild(document.createTextNode(item));
+
+  const button = createButton("remove-item btn-link text-red");
+
+  li.appendChild(button);
+
+  // Add li to the DOM
+  itemList.appendChild(li);
 };
 
 const createButton = (classes) => {
