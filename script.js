@@ -4,6 +4,14 @@ const itemList = document.getElementById("item-list");
 const clearButton = document.getElementById("clear");
 const itemFilter = document.getElementById("filter");
 
+const displayItems = () => {
+  const itemsFromStorage = getItemsFromStorage();
+
+  itemsFromStorage.forEach((item) => {
+    addItemToDOM(item);
+  });
+};
+
 const onAddItemSubmit = (e) => {
   e.preventDefault();
 
@@ -125,5 +133,6 @@ itemForm.addEventListener("submit", onAddItemSubmit);
 itemList.addEventListener("click", removeItem);
 clearButton.addEventListener("click", clearItems);
 itemFilter.addEventListener("input", filterItems);
+document.addEventListener("DOMContentLoaded", displayItems);
 
 checkUI();
