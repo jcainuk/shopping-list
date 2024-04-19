@@ -17,13 +17,15 @@ const addItem = (e) => {
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(newItem));
 
+  const button = createButton("");
+  li.appendChild(button);
   console.log(li);
 };
 
 const createButton = (classes) => {
   const button = document.createElement("button");
   button.className = classes;
-  const icon = createIcon();
+  const icon = createIcon("fa-solid fa-xmark");
   button.appendChild(icon);
   return button;
 };
