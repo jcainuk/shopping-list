@@ -20,5 +20,11 @@ const addItem = (e) => {
   console.log(li);
 };
 
+const createButton = (classes) => {
+  const button = document.createElement("button");
+  button.className = classes;
+  return button;
+};
+
 // Event Listeners
 itemForm.addEventListener("submit", addItem);
