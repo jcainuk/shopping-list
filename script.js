@@ -46,14 +46,18 @@ const createIcon = (classes) => {
 
 const removeItem = (e) => {
   if (e.target.parentElement.classList.contains("remove-item")) {
-    e.target.parentElement.parentElement.remove();
+    if (window.confirm("Are you sure?")) {
+      e.target.parentElement.parentElement.remove();
+      checkUI();
+    }
   }
-  checkUI();
 };
 
 const clearItems = () => {
-  while (itemList.firstChild) {
-    itemList.removeChild(itemList.firstChild);
+  if (window.confirm("Are you sure?")) {
+    while (itemList.firstChild) {
+      itemList.removeChild(itemList.firstChild);
+    }
   }
   checkUI();
 };
