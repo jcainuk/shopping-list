@@ -48,6 +48,7 @@ header {
 header h1 {
   font-weight: 300;
   margin-left: 10px;
+  font-size: 3rem;
 }
 
 .container {
