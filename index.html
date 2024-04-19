@@ -19,53 +19,59 @@
         <h1>Shopping List</h1>
       </header>
       <form id="item-form">
-        <div>
+        <div class="form-control">
           <input
             type="text"
             id="item-input"
             name="item"
             placeholder="Enter Item"
+            class="form-input"
           />
         </div>
-        <div>
-          <button type="submit">
+        <div class="form-control">
+          <button type="submit" class="btn">
             <i class="fa-solid fa-plus"></i>Add Item
           </button>
         </div>
       </form>
 
       <div>
-        <input type="text" id="filter" placeholder="Filter Items" />
+        <input
+          type="text"
+          id="filter"
+          class="form-input-filter"
+          placeholder="Filter Items"
+        />
       </div>
 
-      <ul id="item-list">
+      <ul id="item-list" class="items">
         <li>
           Apples
-          <button>
+          <button class="remove-item btn-link text-red">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </li>
         <li>
           Orange Juice
-          <button>
+          <button class="remove-item btn-link text-red">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </li>
         <li>
           Oreos
-          <button>
+          <button class="remove-item btn-link text-red">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </li>
         <li>
           Milk
-          <button>
+          <button class="remove-item btn-link text-red">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </li>
       </ul>
 
-      <button id="clear">Clear All</button>
+      <button id="clear" class="btn-clear">Clear All</button>
     </div>
 
     <script src="script.js"></script>
