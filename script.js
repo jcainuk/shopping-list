@@ -23,12 +23,14 @@ const addItem = (e) => {
 const createButton = (classes) => {
   const button = document.createElement("button");
   button.className = classes;
+  const icon = createIcon();
+  button.appendChild(icon);
   return button;
 };
 
 const createIcon = (classes) => {
   const icon = document.createElement("i");
-  i.className = classes;
+  icon.className = classes;
   return icon;
 };
 
